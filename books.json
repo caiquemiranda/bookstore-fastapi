@@ -1,1 +1,1 @@
-["book 1", "book 2", "book 3", "book 4"]
+["book 1", "book 2", "book 3", "book 4", {"name": "boo 1", "price": 10.0, "book_id": "a915906b348e436a87d3950662536f2c", "genre": "fiction"}, {"name": "boo 1", "price": 10.0, "book_id": "c7624e3204a344518ac630c9c0a8890f", "genre": "fiction"}]
