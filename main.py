@@ -18,7 +18,7 @@ async def home():
 async def list_books():
     return {
         "books":BOOK_LIST
-}
+        }
 
 @app.get("/list-book-by-index/{index}")
 async def list_book_by_index(index: int):
@@ -27,10 +27,16 @@ async def list_book_by_index(index: int):
     else:
         return {
             "books":BOOK_LIST[index]
-}
+            }
 
 @app.get("/get-random-book")
 async def get_random_book():
     return random.choice(BOOK_LIST)
 
-
+@app.post("/add-book")
+async def add_book(book: str):
+    BOOK_LIST.append(book)
+    return{
+        "message":f'Book {book} was added.'
+    }
+    
