@@ -17,5 +17,10 @@ async def home():
 async def list_books():
     return {
         "books":BOOK_LIST
+}
 
+@app.get("/list-book-by-index/{index}")
+async def list_book_by_index(index: int):
+    return {
+        "books":BOOK_LIST[index]
 }
