@@ -1,5 +1,5 @@
 from fastapi import FastAPI, HTTPException
-
+import random
 
 app = FastAPI()
 
@@ -28,3 +28,9 @@ async def list_book_by_index(index: int):
         return {
             "books":BOOK_LIST[index]
 }
+
+@app.get("/get-random-book")
+async def get_random_book():
+    return random.choice(BOOK_LIST)
+
+
