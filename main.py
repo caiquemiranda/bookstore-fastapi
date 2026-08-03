@@ -1,4 +1,5 @@
-from fastapi import FastAPI
+from fastapi import FastAPI, HTTPException
+
 
 app = FastAPI()
 
@@ -21,6 +22,9 @@ async def list_books():
 
 @app.get("/list-book-by-index/{index}")
 async def list_book_by_index(index: int):
-    return {
-        "books":BOOK_LIST[index]
+    if index < 0 or index >= len(BOOK_LIST):
+        raise HTTPException(404, "Index out of range")
+    else:
+        return {
+            "books":BOOK_LIST[index]
 }
