@@ -14,8 +14,8 @@ async def home():
     return "Welcome my bookstore"
 
 @app.get("/list-books")
-async def list-books():
+async def list_books():
     return {
-        books:BOOK_LIST
+        "books":BOOK_LIST
 
 }
